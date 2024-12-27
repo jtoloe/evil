@@ -2033,7 +2033,9 @@ The following special registers are supported.
                     (minibuffer-with-setup-hook
                         (lambda ()
                           (when evil-last-=-register-input
-                            (add-hook 'pre-command-hook #'evil-ex-remove-default nil t)))
+                            (add-hook 'pre-command-hook #'evil-ex-remove-default nil t))
+                          (add-hook 'completion-at-point-functions
+                                    #'elisp-completion-at-point nil t))
                       (read-from-minibuffer
                        "="
                        (and evil-last-=-register-input
